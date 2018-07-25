@@ -5,7 +5,7 @@
     "en": "D-Link DCH-Z110"
   },
   "version": "1.0.0",
-  "compatibility": ">=1.0.2",
+  "compatibility": "1.x >=1.5.0",
   "description": {
     "en": "D-Link DCH-Z110 for Homey",
     "nl": "D-Link DCH-Z110 voor Homey"

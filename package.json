@@ -1,0 +1,21 @@
+{
+  "name": "com.dlink.dch-z110",
+  "version": "1.0.0",
+  "description": "This app adds support for DCH-Z110 in Homey",
+  "main": "app.js",
+  "dependencies": {
+    "homey-zwavedriver": "git+https://github.com/athombv/node-homey-zwavedriver.git"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "run": "homeyConfig compose && athom project --run",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bramoosterhuis/com.devolo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/bramoosterhuis/com.devolo#readme"
+}

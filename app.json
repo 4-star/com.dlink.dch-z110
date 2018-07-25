@@ -1,0 +1,225 @@
+{
+  "id": "com.dlink.dch-z110",
+  "name": {
+    "en": "D-Link DCH-Z110"
+  },
+  "version": "1.0.0",
+  "compatibility": ">=1.0.2",
+  "description": {
+    "en": "D-Link DCH-Z110 for Homey",
+    "nl": "D-Link DCH-Z110 voor Homey"
+  },
+  "category": [
+    "appliances",
+    "lights",
+    "climate",
+    "security"
+  ],
+  "images": {
+    "large": "/assets/images/large.png", 
+    "small": "/assets/images/small.png"
+  },
+  "author": {
+    "name": "Mikael Hilton",
+    "email": "N/A"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Developers of Devolo App",
+        "email": "com.devolo"
+      },
+	  {
+		"name": "Mikael Hilton",
+		"email": "N/A"
+	  }
+    ]
+  },
+  "drivers": [
+    {
+      "id": "DCH-Z110",
+      "name": {
+        "en": "Door/Window Contact"
+      },
+      "zwave": {
+        "manufacturerId": 264,
+        "productTypeId": [
+          2
+        ],
+        "productId": [
+          14
+        ],
+        "learnmode": {
+          "image": "/drivers/DCH-Z110/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press the tamper button on the back of the Door/Window Contact three times.",
+            "nl": "Druk drie keer op de knop achter op de Door/Window Contact."
+          }
+        },
+        "unlearnmode": {
+          "image": "/drivers/DCH-Z110/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press the tamper button on the back of the Door/Window Contact three times.",
+            "nl": "Druk drie keer op de knop achter op de Door/Window Contact."
+          }
+        },
+        "associationGroups": [
+          1,
+          2
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "Z-Wave Plus Lifeline"
+            }
+          },
+          "2": {
+            "hint": {
+              "en": "Uses the \"Basic Set\" for control of other Z-Wave devices.",
+              "nl": "Gebruikt de \"Basic Set\" voor het aansturen van andere Z-Wave apparaten."
+            }
+          }
+        }
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_contact",
+        "alarm_tamper",
+        "measure_luminance",
+        "measure_temperature",
+        "measure_battery"
+      ],
+      "images": {
+        "large": "/drivers/DCH-Z110/assets/images/large.png",
+        "small": "/drivers/DCH-Z110/assets/images/small.png"
+      },
+      "mobile": {
+        "components": [
+          {
+            "id": "icon"
+          },
+          {
+            "id": "battery",
+            "capabilities": [
+              "measure_battery"
+            ]
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "alarm_contact",
+              "measure_luminance",
+              "measure_temperature",
+              "alarm_tamper"
+            ]
+          }
+        ]
+      },
+      "settings": [
+        {
+          "id": "basic_set_level",
+          "type": "number",
+          "attr": {
+            "min": 0,
+            "max": 255
+          },
+          "label": {
+            "en": "Basic set level",
+            "nl": "Basic set waarde"
+          },
+          "hint": {
+            "en": "Setting the basic command value that will be send to associated Z-Wave devices.",
+            "nl": "Stel hier de basic command waarde in die wordt verstuurd naar geassocieerde Z-Wave devices."
+          },
+          "value": 255
+        },
+        {
+          "id": "light_sensitivity",
+          "type": "number",
+          "attr": {
+            "min": 0,
+            "max": 100
+          },
+          "label": {
+            "en": "Illumination threshold",
+            "nl": "Verlichtingsdrempel"
+          },
+          "hint": {
+            "en": "The illummination threshold (%) to turn on the light (on associated devices) on movement. Range: 0 (off, never turn on light), 1 - 99, 100 (always turn light on).",
+            "nl": "De drempelwaarde (%) voor de lichtsensor om het licht in te schakelen (geassocieerde apparaten) bij beweging. Bereik: 0 (uit, zet nooit licht aan), 1 - 99 , 100 (zet altijd licht aan)."
+          },
+          "value": 99
+        },
+        {
+          "id": "battery_report_time",
+          "type": "number",
+          "attr": {
+            "min": 0,
+            "max": 127
+          },
+          "label": {
+            "en": "Battery level report interval",
+            "nl": "Batterijniveau verzend interval"
+          },
+          "hint": {
+            "en": "The interval time (in hours) for auto report the actual battery level. Range: 0 - 127.",
+            "nl": "Een vast interval (in uren) om een update te sturen over het actuele batterij niveau. Bereik: 0 - 127."
+          },
+          "value": 12
+        },
+        {
+          "id": "contact_report_time",
+          "type": "number",
+          "attr": {
+            "min": 0,
+            "max": 127
+          },
+          "label": {
+            "en": "Door/Window report interval",
+            "nl": "Deur/Raam verzend interval"
+          },
+          "hint": {
+            "en": "The interval time (in hours) for auto report of the actual door/window state. Range: 0 - 127.",
+            "nl": "Een vast interval (in uren) om een rapport te sturen over de actuele deur/raam status. Bereik: 0 - 127."
+          },
+          "value": 12
+        },
+        {
+          "id": "illumination_report_time",
+          "type": "number",
+          "attr": {
+            "min": 0,
+            "max": 127
+          },
+          "label": {
+            "en": "Illumination report interval",
+            "nl": "Helderheid verzend interval"
+          },
+          "hint": {
+            "en": "The interval time (in hours) for auto report of the illumination. Range: 0 - 127.",
+            "nl": "Een vast interval (in uren) om een rapport te sturen over de gemeten helderheid. Range: 0 - 127."
+          },
+          "value": 12
+        },
+        {
+          "id": "temperature_report_time",
+          "type": "number",
+          "attr": {
+            "min": 0,
+            "max": 127
+          },
+          "label": {
+            "en": "Temperature report interval",
+            "nl": "Temperatuur verzend interval"
+          },
+          "hint": {
+            "en": "The interval time (in hours) for auto report of the temperature. Range: 0 - 127.",
+            "nl": "Een vast interval (in uren) om een rapport te sturen over de temperatuur. Range: 0 - 127."
+          },
+          "value": 12
+        }
+      ]
+    }  
+      
+  ]
+}
